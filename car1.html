@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Car's Information" />
+    <meta name="keywords" content="HTML, CSS, cars, SUV" />
+    <meta name="author" content="Fernando Branco" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="shortcut icon" href="assets/SUV_icon.ico" />
+    <title>SUV</title>
+    <style>
+      header {
+        background-image: linear-gradient(to bottom right, grey, navy);
+        padding: 0.2em;
+        text-align: center;
+        height: 10em;
+        margin-bottom: 0.4em;
+      }
+
+      .row {
+        display: flex;
+      }
+
+      .column {
+        flex: 1;
+        padding: 0.61em;
+      }
+
+      /* .column.left {
+      } */
+
+      .column.one {
+        border-right: 1px solid #800000;
+      }
+
+      h1 {
+        color: #fff;
+        text-shadow: 1px 1px 2px black, 0 0 25px;
+      }
+
+      h2 {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 5px navy;
+        text-align: center;
+      }
+
+      h3 {
+        color: white;
+        text-align: center;
+        text-shadow: 1px 1px 2px black, 0 0 5px navy;
+      }
+
+      hr {
+        background-color: navy;
+        width: 70%;
+        height: 0.1em;
+        border: 0px;
+      }
+
+      p {
+        columns: 2;
+        font-size: 1rem;
+        column-gap: 1em;
+        column-rule: #525252 solid 2px;
+        text-align: justify;
+      }
+
+      footer {
+        margin-top: 5px;
+        background-color: lightblue;
+        padding: 0.61em;
+      }
+
+      address {
+        font-size: 0.9rem;
+        color: brown;
+      }
+
+      /* table */
+      .carTable {
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0px auto;
+      }
+      .carTable td {
+        overflow: hidden;
+        padding: 0.5em 0.3em;
+        word-break: normal;
+      }
+      .carTable th {
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        padding: 0.5em 0.3em;
+        word-break: normal;
+      }
+      .carTable .carTable-headert {
+        background-color: #800000;
+        color: #fff;
+        text-align: center;
+        padding: 0.5em;
+      }
+      .carTable .carTable-01 {
+        background-color: grey;
+        border-right: 2px solid #800000;
+        border-left: 1px solid white;
+        border-bottom: 1px solid white;
+        text-align: left;
+        color: navy;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      .carTable .carTable-02 {
+        text-align: center;
+        vertical-align: center;
+        border: 1px dashed grey;
+      }
+      .carTable .carTable-03 {
+        border: 1px dashed grey;
+        text-align: center;
+      }
+      caption {
+        font-size: 1.5rem;
+        margin: 0.5em;
+        font-weight: bold;
+        color: #800000;
+      }
+
+      #phone {
+        text-decoration: none;
+      }
+
+      #topLink {
+        font-size: 0.85rem;
+      }
+
+      #topLink:hover {
+        color: green;
+      }
+
+      nav {
+        height: 60px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-top: 1.5em;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.6em;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      .links {
+        display: block;
+        color: white;
+        background-color: #800000;
+        text-decoration: none;
+        margin-left: 0.4em;
+        margin-right: 0.4em;
+        padding: 0.8em;
+        border: 2px solid white;
+        border-radius: 10px;
+        outline: 0;
+      }
+
+      .links:hover {
+        color: navy;
+        background-color: white;
+        border: 2px solid black;
+      }
+
+      .links:visited {
+        color: #800000;
+        background-color: grey;
+      }
+
+      iframe {
+        width: 60%;
+        height: 40%;
+        padding: 1em;
+        background-clip: padding-box;
+        background: linear-gradient(to bottom right, white, grey);
+        border: 5px solid navy;
+        border-radius: 15px;
+        box-shadow: 5px 5px;
+        margin-left: 5em;
+      }
+
+      ol {
+        list-style-type: upper-roman;
+        color: navy;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .nav {
+        float: left;
+      }
+      .carlist {
+        font-size: 1.2rem;
+        font-style: italic;
+      }
+
+      /* Responsive layout */
+      @media only screen and (max-width: 970px) {
+        .row {
+          flex-direction: column;
+        }
+
+        p {
+          columns: 1;
+        }
+
+        .column.side2 {
+          order: 2;
+        }
+
+        .column.left {
+          order: 3;
+        }
+
+        hr {
+          margin: auto;
+          background-color: #800000;
+          width: 80%;
+          height: 0.2em;
+          border: 0px;
+        }
+
+        h2 {
+          color: navy;
+          text-shadow: none;
+          font-style: italic;
+          text-align: center;
+        }
+
+        h3 {
+          text-align: left;
+        }
+
+        iframe {
+          width: 40%;
+          height: 40%;
+          padding: 10px;
+          background-clip: padding-box;
+          background: linear-gradient(to bottom right, white, navy);
+          border: 5px solid #800000;
+          border-radius: 15px;
+          box-shadow: 5px 5px;
+        }
+
+        .column.one {
+          border-right: none;
+          border-bottom: 1px solid #800000;
+        }
+      }
+      @media only screen and (max-width: 510px) {
+        .links {
+          margin: 0.2em;
+          padding: 0.5em;
+        }
+        caption {
+          font-size: 1.5rem;
+          margin: 0.5em;
+          font-style: italic;
+          color: navy;
+        }
+        .carTable .carTable-01 {
+          color: #800000;
+        }
+      }
+      @media only screen and (max-width: 434px) {
+        .links {
+          margin: 0.2em;
+          padding: 0.5em;
+        }
+        header {
+          height: 18em;
+          margin-bottom: 0.61em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="top">SUVs Information</h1>
+      <nav>
+        <ul>
+          <li class="nav"><a class="links" href="index.html" title="Home Page">Home</a></li>
+          <li class="nav"><a class="links" href="car2.html" title="About Sedan"> Sedan</a></li>
+          <li class="nav">
+            <a class="links" href="car3.html" title="About Trucks">Pickup Truck</a>
+          </li>
+          <li class="nav">
+            <a class="links" href="contactMe.html" title="Contact Me">Contact Me</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="row">
+      <div class="column one">
+        <article>
+          <h2>What is a SUV?</h2>
+          <hr />
+          <p>
+            A sport utility vehicle, or SUV, is a type of vehicle that combines
+            road-going passenger car features with off-road vehicle attributes
+            including greater ground clearance and four-wheel drive. There is no
+            universally accepted definition of an SUV, and the term is used
+            differently in different nations. As a result, it's "a broad phrase
+            that typically includes a wide range of four-wheel-drive vehicles."
+            Some definitions state that an SUV must be built on a light truck
+            chassis, whereas others include any vehicle with off-road design
+            features as an SUV.
+          </p>
+          <h3>Suv's types</h3>
+          <ol class="carListOrder">
+            <li class="carlist">Crossover</li>
+            <li class="carlist">Mini</li>
+            <li class="carlist">Compact</li>
+            <li class="carlist">Coupe</li>
+            <li class="carlist">Full-size</li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="column">
+        <table class="carTable">
+          <caption>
+            Cars Comparison
+          </caption>
+          <thead>
+            <tr>
+              <th class="carTable-headert">Car Types</th>
+              <th class="carTable-headert">SUV</th>
+              <th class="carTable-headert">SEDAN</th>
+              <th class="carTable-headert">PICKUP TRUCK</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="carTable-01">Wheels</td>
+              <td class="carTable-02" colspan="3">Four-wheel</td>
+            </tr>
+            <tr>
+              <td class="carTable-01" rowspan="2">Off-Road</td>
+              <td class="carTable-03">4X4</td>
+              <td class="carTable-03">No</td>
+              <td class="carTable-03">4X4</td>
+            </tr>
+            <tr>
+              <td class="carTable-03">4WD</td>
+              <td class="carTable-03">No</td>
+              <td class="carTable-03">4WD</td>
+            </tr>
+            <tr>
+              <td class="carTable-01">Doors</td>
+              <td class="carTable-03">Four or more</td>
+              <td class="carTable-03">Four</td>
+              <td class="carTable-03">Two or More</td>
+            </tr>
+            <tr>
+              <td class="carTable-01">Rows of Seat</td>
+              <td class="carTable-03">Three</td>
+              <td class="carTable-03">Two</td>
+              <td class="carTable-03">One or more</td>
+            </tr>
+            <tr>
+              <td class="carTable-01">Fuel Efficient</td>
+              <td class="carTable-03">No</td>
+              <td class="carTable-03">Yes</td>
+              <td class="carTable-03">No</td>
+            </tr>
+            <tr>
+              <td class="carTable-01">Avg. Miles per Gallon (MpG)</td>
+              <td class="carTable-03">30</td>
+              <td class="carTable-03">35</td>
+              <td class="carTable-03">20</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="column left">
+        <h3>SUV VIDEO</h3>
+        <iframe
+          src="https://www.youtube.com/embed/EppEYPgRKXY"
+          title="World Premiere of the All-Electric EQS SUV"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <footer>
+      <address>
+        More details, contact: <br />
+        Fernando Branco at
+        <a id="phone" href="tel:+13115555550">(311) 555-5550</a>
+      </address>
+      <a id="topLink" href="#top">Top</a>
+    </footer>
+  </body>
+</html>

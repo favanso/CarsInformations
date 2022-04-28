@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Contact Me" />
+    <meta name="keywords" content="HTML,CSS,cars,contact" />
+    <meta name="author" content="Fernando Branco" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me</title>
+    <style>
+      main {
+        box-shadow: 1px 2px 5px black;
+        margin-top: 10px;
+        padding: 15px;
+      }
+      body {
+        background-color: white;
+      }
+
+      header {
+        display: block;
+        padding: 1em;
+        background-image: linear-gradient(to bottom right, grey, navy);
+        color: white;
+      }
+      h2 {
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 2px black, 0 0 25px;
+      }
+      fieldset {
+        width: 70%;
+        margin: auto;
+      }
+      legend {
+        font-weight: bold;
+        color: #800000;
+        font-size: 1.3rem;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="number"] {
+        width: 70%;
+        padding: 1em;
+        margin: 0.5em 0;
+        display: block;
+        border: 1px solid navy;
+        border-radius: 7px;
+      }
+      label {
+        font-weight: bold;
+      }
+
+      input[type="reset"] {
+        background-color: wheat;
+        border: 3px solid navy;
+        font-weight: bold;
+        padding: 1em;
+        margin-left: 1.5em;
+        margin-top: 1.2em;
+        border-radius: 8px;
+      }
+      input[type="submit"] {
+        background-color: wheat;
+        border: 3px solid navy;
+        font-weight: bold;
+        padding: 1em;
+        margin-left: 15em;
+        margin-top: 1.2em;
+        border-radius: 8px;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+        color: white;
+        border: 5px double white;
+      }
+      input[type="reset"]:hover {
+        background-color: rgba(255, 145, 0, 0.918);
+        color: white;
+        border: 5px double white;
+      }
+      nav {
+        height: 60px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-top: 1.5em;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.6em;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      .links {
+        color: white;
+        background-color: #800000;
+        text-decoration: none;
+        margin: 0.4em;
+        padding: 0.8em;
+        border: 2px solid white;
+        border-radius: 10px;
+        outline: 0;
+      }
+
+      .links:hover {
+        color: navy;
+        background-color: white;
+        border: 2px solid black;
+      }
+      a:visited {
+        color: #800000;
+        background-color: grey;
+      }
+      @media only screen and (max-width: 800px) {
+        input[type="reset"] {
+        margin-left: 1em;
+        
+      }
+      input[type="submit"] {
+        margin-left: 8em;
+      }
+      }
+    </style>
+  </head>
+  <header>
+    <h2>Contact Me</h2>
+    <nav>
+      <a class="links" href="index.html" title="Home Page">Home</a>
+      <a class="links" href="car1.html" title="About SUV">SUV</a>
+      <a class="links" href="car2.html" title="About Sedan"> Sedan</a>
+      <a class="links" href="car3.html" title="About Trucks">Pickup Truck</a>
+    </nav>
+  </header>
+
+  <body>
+    <main>
+      <form action="mailto:branco.fernando@student.oaklandcc.edu" method="post">
+        <fieldset>
+          <legend>Your Personal Information for contact</legend>
+          <label for="fname">First name:</label>
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            placeholder="Your name..."
+          /><br />
+          <label for="lname">Last name:</label>
+          <input
+            type="text"
+            id="lname"
+            name="lastname"
+            placeholder="Your last name"
+          /><br />
+          <label for="zip">zip:</label>
+          <input
+            type="text"
+            id="zip"
+            name="zip"
+            placeholder="zipcode"
+            pattern="\d{5}([-]\d{4})?"
+            required
+          /><br />
+          <label for="email">Your email address: </label>
+          <input type="email" id="email" required /><br />
+          <label for="phone">Your phone number: </label>
+          <input
+            type="tel"
+            id="phone"
+            pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+            required
+          /><br />
+        </fieldset>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </form>
+    </main>
+  </body>
+  <footer></footer>
+</html>

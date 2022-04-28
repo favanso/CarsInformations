@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Car's Information" />
+    <meta name="keywords" content="HTML,CSS, cars" />
+    <meta name="author" content="Fernando Branco" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car's Information</title>
+    <style>
+      header {
+        background-image: linear-gradient(to bottom right, grey, navy);
+        padding: 0.61em;
+        text-align: center;
+        height: 6.2em;
+        margin-bottom: 0.61em;
+      }
+
+      #imgHeader {
+        animation: moveright 4s infinite;
+        max-width: 5%;
+        padding: 0.3em;
+        margin-bottom: -40px;
+      }
+      @keyframes moveright {
+        from {
+          margin-left: 20%;
+        }
+        to {
+          margin-left: 80%;
+        }
+      }
+      .road {
+        justify-content: center;
+        align-items: center;
+        min-height: 5vh;
+      }
+
+      .infinite {
+        position: relative;
+        margin-bottom: 30px;
+        width: 100%;
+        height: 60px;
+        background: #525252;
+        transform-origin: bottom;
+        transform-style: preserve-3d;
+        transform: perspective(90px) rotateX(20deg);
+      }
+
+      .infinite:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50);
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          #fff 0%,
+          #fff 70%,
+          #525252 70%,
+          #525252 100%
+        );
+        background-size: 120px;
+      }
+
+      .infinite:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 15px;
+        background: #333;
+        bottom: -15px;
+        transform-origin: top;
+        transform: perspective(500px) rotateX(-25deg);
+      }
+
+      .row {
+        display: flex;
+      }
+
+      .column {
+        padding: 0.61em;
+        height: 31.2em;
+      }
+
+      /* Left and right column */
+      .column.side1 {
+        flex-direction: column;
+        background-color: lavender;
+        padding: 0.61em;
+        width: 100%;
+        flex: 1;
+      }
+      .column.side2 {
+        flex: 1;
+        background-color: white;
+      }
+
+      .asideImg {
+        max-width: 80%;
+        padding: 0.5em;
+        background-color: wheat;
+        border: 0.2em double navy;
+        border-radius: 0.3em;
+        margin-top: 1em;
+      }
+      .asideImg:hover {
+        border: 0.2em solid #800000;
+        opacity: 70%;
+        background-color: whitesmoke;
+      }
+
+      h1 {
+        color: #fff;
+        text-shadow: 1px 1px 2px black, 0 0 25px;
+      }
+      h2 {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 5px navy;
+        text-align: center;
+      }
+      h3 {
+        color: navy;
+        font-style: italic;
+      }
+      hr {
+        margin: auto;
+        background-color: navy;
+        width: 80%;
+        height: 0.2em;
+        border: 0px;
+      }
+      /* Middle column */
+      .column.middle {
+        border-right: 1px dashed grey;
+        border-left: 2px solid navy;
+        overflow: hidden;
+        flex: 3;
+        background-color: white;
+        height: 27.8em;
+      }
+      article {
+        columns: 2;
+        font-size: 1.125rem;
+        column-gap: 1.2em;
+        column-rule: #525252 solid 1px;
+        text-align: justify;
+      }
+
+      ul {
+        list-style: url("/assets/carList.ico");
+        font-size: 1rem;
+      }
+
+      footer {
+        margin-top: 5px;
+        background-color: lightblue;
+        padding: 0.61em;
+        height: auto;
+      }
+      address {
+        font-size: 0.9rem;
+        color: brown;
+      }
+      #phone {
+        text-decoration: none;
+      }
+      #topLink {
+        font-size: 0.85rem;
+      }
+      #topLink:hover {
+        color: green;
+      }
+
+      .links {
+        display: flex;
+        font-weight: bold;
+        justify-content: center;
+        color: white;
+        background-color: navy;
+        text-decoration: none;
+        margin: 0.5em;
+        padding: 0.75em;
+        border: 0.15em solid white;
+        border-radius: 0.5em;
+      }
+
+      .links:hover {
+        color: white;
+        background-color: #800000;
+        border: 0.15em solid black;
+      }
+      /* Responsive layout */
+      @media only screen and (max-width: 800px) {
+        .row {
+          flex-direction: column;
+        }
+        article {
+          columns: 1;
+        }
+        .column.side2 {
+          order: 2;
+        }
+        .column.middle {
+          order: 3;
+          border: none;
+        }
+        hr {
+          margin: auto;
+          background-color: #800000;
+          width: 80%;
+          height: 0.2em;
+          border: 0px;
+        }
+        .asideImg {
+          max-width: 30%;
+          padding: 0.4em;
+          background-color: grey;
+          border: 0.2em double navy;
+          border-radius: 0.3em;
+        }
+        .links {
+          padding: 0.5em;
+          width: 90%;
+        }
+        h2 {
+          color: navy;
+          text-shadow: none;
+          font-style: italic;
+          text-align: center;
+        }
+      }
+      @media only screen and (max-width: 1150px) {
+        .road {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 875px) {
+        .column.middle {
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="top">Cars Information</h1>
+    </header>
+    <div class="road">
+      <img id="imgHeader" src="assets/Car Header.png" />
+      <div class="infinite"></div>
+    </div>
+    <main class="row">
+      <nav class="column side1">
+        <a class="links" href="car1.html" title="About SUV">SUV</a>
+        <a class="links" href="car2.html" title="About Sedan"> Sedan</a>
+        <a class="links" href="car3.html" title="About Pickup">Pickup Truck</a>
+        <a class="links" href="contactMe.html" title="Contact Me">Contact Me</a>
+      </nav>
+      <article class="column middle">
+        <h2>Cars History</h2>
+        <hr />
+        <p>
+          A car (or automobile) is a motor vehicle with four wheels that is used
+          for transportation. Cars became widely used in the twentieth century,
+          and industrialized economies rely on them. When German inventor Carl
+          Benz patented his Benz Patent-Motorwagen in 1886, it is considered the
+          birth year of the automobile. The 1908 Model T, an American car built
+          by the Ford Motor Company, was one of the first cars available to the
+          general public. In the United States, cars quickly displaced
+          animal-drawn carriages and carts. Vehicles have become increasingly
+          sophisticated as new features and controls have been introduced
+          throughout the years. There are around 1 billion automobiles in use
+          worldwide. The use of automobiles is quickly expanding, particularly
+          in China, India, and other newly industrialized countries.
+        </p>
+        <h3>Cars Types</h3>
+        <ul>
+          <li>Sedan</li>
+          <li>Coupe</li>
+          <li>Sports Car</li>
+          <li>Hatchback</li>
+          <li>Convertible</li>
+          <li>Sport-utility vehicle (SUV)</li>
+          <li>Minivan</li>
+        </ul>
+      </article>
+      <aside class="column side2">
+        <a href="https://en.wikipedia.org/wiki/Pickup_truck"
+          ><img class="asideImg" src="assets/Pickup.jpg" alt="Pickup"
+        /></a>
+        <a
+          href="https://www.caranddriver.com/research/a31787452/suv-meaning-what-is-an-suv/"
+          ><img class="asideImg" src="assets/SUV.jpg" alt="SUV"
+        /></a>
+        <a href="https://www.jdpower.com/cars/shopping-guides/what-is-a-sedan"
+          ><img class="asideImg" src="assets/Sedan.png" alt="Sedan"
+        /></a>
+      </aside>
+    </main>
+    <footer>
+      <address>
+        More details, contact: <br />
+        Fernando Branco at
+        <a id="phone" href="tel:+13115555550">(311) 555-5550</a>
+      </address>
+      <a id="topLink" href="#top">Top</a>
+    </footer>
+  </body>
+</html>
